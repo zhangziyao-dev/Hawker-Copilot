@@ -105,92 +105,53 @@ Infrastructure & Orchestration:APScheduler (nightly jobs), Telegram Bot API (ale
 ![System Architecture](docs/architecture.png)
 
 
-1. Data Ingestion Layer
-
-The system aggregates multi-signal operational data to simulate real-world hawker demand conditions, including:
-
-POS sales history (synthetic, vendor-calibrated)
-Weather data (OpenWeatherMap API)
-Public & school holidays (Singapore calendar data)
-Event signals (curated local events dataset)
-Derived patterns (payday cycles, monsoon seasonality)
-
-These inputs form the foundation for demand forecasting and downstream AI reasoning.
-
-2. Demand Forecasting Layer (Machine Learning Core)
-
-A machine learning forecasting engine predicts daily vendor demand using:
-
-XGBoost regression model
-20+ Singapore-specific engineered features
-Weather + event + temporal demand signals
-Vendor-specific historical patterns
-
-This layer outputs:
-
-Predicted portion demand
-Confidence score signals
-Feature-level contribution signals
-
-3. Context Retrieval Layer (RAG Intelligence)
-
-A semantic retrieval system enhances forecasting context using historical similarity matching:
-
-FAISS vector database for fast similarity search
-Sentence-transformer embeddings (MiniLM)
-Retrieval of past demand scenarios
-Pattern matching for similar operational conditions
-
-This layer grounds predictions in historical operational memory.
-
-4. AI Copilot Reasoning Layer (LLM Intelligence)
-
-An LLM-based reasoning engine converts structured predictions into actionable vendor advice:
-
-OpenAI GPT-4o-mini
-Vendor-aware prompt engineering
-Fusion of forecast + retrieved context
-Generates operational recommendations
-
-Outputs include:
-
-Suggested preparation quantities
-Revenue and waste impact estimates
-Risk assessment (shortage vs overproduction)
-Plain-English decision guidance
-
-5. Scheduling & Notification Layer
-
-A background orchestration system automates daily operational delivery:
-
-APScheduler (nightly 7PM SGT triggers)
-Vendor-specific recommendation generation
-Telegram Bot API for message delivery
-Manual trigger endpoints for testing/demo mode
-
-This layer simulates real-world autonomous AI assistant behavior.
-
-6. Persistence & Analytics Layer
-
-All operational outputs are stored for traceability and continuous improvement:
-
-SQLite database for vendor + recommendation history
-Structured logging of AI outputs
-Scenario archives for retrieval layer
-Queryable historical decision records
-
-7. Visualization Layer (Frontend Dashboard)
-
-A React + Vite dashboard provides real-time system interaction and monitoring:
-
-Demand forecasting visualisation (7-day view)
-AI recommendations with confidence scores
-Retrieval explanations (similar past cases)
-Vendor history tracking
-Demo mode showing full 3-layer pipeline execution
-🧠 Design Philosophy
-
-The system is built as a lightweight, interpretable AI copilot rather than an enterprise ERP system
+📦 Data Ingestion Layer
+Aggregates multi-signal data to simulate real hawker demand conditions
+Uses POS sales history (synthetic, vendor-calibrated) as core signal
+Integrates weather, holidays, and curated local event data
+Includes derived patterns like payday cycles and monsoon seasonality
+Feeds structured inputs into forecasting pipeline
+📊 Demand Forecasting Layer (ML Core)
+Uses XGBoost regression model for daily demand prediction
+Engineered with 20+ Singapore-specific features
+Incorporates weather, events, and temporal demand signals
+Learns vendor-specific historical consumption patterns
+Outputs demand forecast, confidence score, and feature importance
+🔍 Context Retrieval Layer (RAG)
+Uses FAISS vector database for fast similarity search
+Embeds historical demand scenarios using sentence-transformers (MiniLM)
+Retrieves past cases with similar operational conditions
+Provides contextual grounding for forecasts
+Improves robustness via historical pattern matching
+🧠 AI Copilot Reasoning Layer (LLM)
+Uses GPT-4o-mini for operational decision generation
+Combines forecast outputs with retrieved historical context
+Applies vendor-aware prompt engineering
+Generates actionable preparation recommendations
+Outputs quantity suggestions, risk assessment, and revenue impact
+⏱️ Scheduling & Notification Layer
+Uses APScheduler for automated nightly execution (7PM SGT)
+Generates vendor-specific daily recommendations
+Sends alerts via Telegram Bot API
+Supports manual trigger endpoints for testing/demo
+Simulates autonomous AI assistant workflow
+💾 Persistence & Analytics Layer
+Stores all outputs in SQLite database
+Tracks vendor history and recommendation logs
+Saves structured AI outputs for traceability
+Archives scenarios for retrieval layer improvement
+Enables querying of historical decisions
+📊 Visualization Layer (Frontend)
+React + Vite dashboard for real-time monitoring
+Displays 7-day demand forecasts
+Shows AI recommendations with confidence scores
+Visualizes retrieved similar past cases
+Includes demo mode for full pipeline walkthrough
+🎯 Design Philosophy
+Lightweight AI copilot, not an enterprise ERP system
+Focus on interpretability and actionable insights
+Designed for real-world hawker operational constraints
+Prioritizes simplicity, clarity, and decision usefulness
 
 
 ## ✨ Features
