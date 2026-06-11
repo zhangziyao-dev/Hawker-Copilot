@@ -11,7 +11,7 @@ AI-native operational copilot for Southeast Asian hawkers and micro-F&B business
 
 [![Watch Demo](https://img.youtube.com/vi/d-tf8ZmiZ_k/0.jpg)](https://www.youtube.com/watch?v=d-tf8ZmiZ_k)
 
-
+---
 🚀 Project Purpose
 
 Hawker Copilot is designed to solve operational inefficiency in small F&B businesses, especially hawkers and independent food vendors who lack data-driven planning tools.Unlike large franchises with analytics teams and inventory systems, small vendors rely heavily on intuition — leading to inconsistent preparation decisions and avoidable losses.
@@ -27,7 +27,7 @@ Traffic and event-driven demand shifts
 The system runs in shadow mode first, benchmarking AI recommendations against real vendor decisions before gradually enabling automated nightly alerts via messaging platforms.
 
 
-
+---
 
 ⚠️ Problem Statement
 
@@ -45,7 +45,7 @@ This leads to:
 sell-outs too early (lost revenue)
 excess unsold food (waste loss)
 
-
+---
 
 📊 Current Industry Gap
 
@@ -54,13 +54,13 @@ Large delivery platforms and enterprise systems already provide macro-level insi
 
 However, these insights are: too broad, not actionable for individual stalls, and not tied to exact preparation quantities
 
-
+---
 
 🤖 Our Solution
 Instead of general trends, Hawker Copilot provides vendor-specific, actionable recommendations through automated chatbot messages that sends @7pm the day before preparation date:
 
 ## 📱 Telegram Alert Preview
-
+---
 🍜 HAWKER COPILOT — Prep Alert
 
 🏪 Ah Kow Chicken Rice
@@ -82,6 +82,7 @@ Powered by Hawker Copilot AI 🤖
 Key Design Principle
 👉 The AI acts as an assistant, not an enterprise ERP system
 👉 Recommendations are simple, interpretable, and operationally actionable
+---
 
 🛠️ Tech Stack
 Backend: FastAPI, Python 3.11, Pydantic (REST APIs)
@@ -106,67 +107,67 @@ Infrastructure & Orchestration:APScheduler (nightly jobs), Telegram Bot API (ale
 
 
 📦 Data Ingestion Layer
-•Aggregates multi-signal data to simulate real hawker demand conditions
-•Uses POS sales history (synthetic, vendor-calibrated) as core signal
-•Integrates weather, holidays, and curated local event data
-•Includes derived patterns like payday cycles and monsoon seasonality
-•Feeds structured inputs into forecasting pipeline
+• Aggregates multi-signal data to simulate real hawker demand conditions
+• Uses POS sales history (synthetic, vendor-calibrated) as core signal
+• Integrates weather, holidays, and curated local event data
+• Includes derived patterns like payday cycles and monsoon seasonality
+• Feeds structured inputs into forecasting pipeline
 
 
 📊 Demand Forecasting Layer (ML Core)
-•Uses XGBoost regression model for daily demand prediction
-•Engineered with 20+ Singapore-specific features
-•Incorporates weather, events, and temporal demand signals
-•Learns vendor-specific historical consumption patterns
-•Outputs demand forecast, confidence score, and feature importance
+• Uses XGBoost regression model for daily demand prediction
+• Engineered with 20+ Singapore-specific features
+• Incorporates weather, events, and temporal demand signals
+• Learns vendor-specific historical consumption patterns
+• Outputs demand forecast, confidence score, and feature importance
 
 
 🔍 Context Retrieval Layer (RAG)
-•Uses FAISS vector database for fast similarity search
-•Embeds historical demand scenarios using sentence-transformers (MiniLM)
-•Retrieves past cases with similar operational conditions
-•Provides contextual grounding for forecasts
-•Improves robustness via historical pattern matching
+• Uses FAISS vector database for fast similarity search
+• Embeds historical demand scenarios using sentence-transformers (MiniLM)
+• Retrieves past cases with similar operational conditions
+• Provides contextual grounding for forecasts
+• Improves robustness via historical pattern matching
 
 
 🧠 AI Copilot Reasoning Layer (LLM)
-•Uses GPT-4o-mini for operational decision generation
-•Combines forecast outputs with retrieved historical context
-•Applies vendor-aware prompt engineering
-•Generates actionable preparation recommendations
-•Outputs quantity suggestions, risk assessment, and revenue impact
+• Uses GPT-4o-mini for operational decision generation
+• Combines forecast outputs with retrieved historical context
+• Applies vendor-aware prompt engineering
+• Generates actionable preparation recommendations
+• Outputs quantity suggestions, risk assessment, and revenue impact
 
 
 ⏱️ Scheduling & Notification Layer
-•Uses APScheduler for automated nightly execution (7PM SGT)
-•Generates vendor-specific daily recommendations
-•Sends alerts via Telegram Bot API
-•Supports manual trigger endpoints for testing/demo
-•Simulates autonomous AI assistant workflow
+• Uses APScheduler for automated nightly execution (7PM SGT)
+• Generates vendor-specific daily recommendations
+• Sends alerts via Telegram Bot API
+• Supports manual trigger endpoints for testing/demo
+• Simulates autonomous AI assistant workflow
 
 
 
 💾 Persistence & Analytics Layer
-•Stores all outputs in SQLite database
-•Tracks vendor history and recommendation logs
-•Saves structured AI outputs for traceability
-•Archives scenarios for retrieval layer improvement
-•Enables querying of historical decisions
+• Stores all outputs in SQLite database
+• Tracks vendor history and recommendation logs
+• Saves structured AI outputs for traceability
+• Archives scenarios for retrieval layer improvement
+• Enables querying of historical decisions
 
 
 
 📊 Visualization Layer (Frontend)
-•React + Vite dashboard for real-time monitoring
-•Displays 7-day demand forecasts
-•Shows AI recommendations with confidence scores
-•Visualizes retrieved similar past cases
-•Includes demo mode for full pipeline walkthrough
+• React + Vite dashboard for real-time monitoring
+• Displays 7-day demand forecasts
+• Shows AI recommendations with confidence scores
+• Visualizes retrieved similar past cases
+• Includes demo mode for full pipeline walkthrough
 
 
 
 🎯 Design Philosophy
-•Lightweight AI copilot, not an enterprise ERP system
-•Focus on interpretability and actionable insights
+• Lightweight AI copilot, not an enterprise ERP system
+• Focus on interpretability and actionable insights
 
 
 
