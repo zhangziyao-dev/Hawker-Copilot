@@ -11,6 +11,7 @@ AI-native operational copilot for Southeast Asian hawkers and micro-F&B business
 
 [![Watch Demo](https://img.youtube.com/vi/d-tf8ZmiZ_k/0.jpg)](https://www.youtube.com/watch?v=d-tf8ZmiZ_k)
 
+
 🚀 Project Purpose
 
 Hawker Copilot is designed to solve operational inefficiency in small F&B businesses, especially hawkers and independent food vendors who lack data-driven planning tools.Unlike large franchises with analytics teams and inventory systems, small vendors rely heavily on intuition — leading to inconsistent preparation decisions and avoidable losses.
@@ -24,6 +25,7 @@ Location-based demand patterns
 Traffic and event-driven demand shifts
 
 The system runs in shadow mode first, benchmarking AI recommendations against real vendor decisions before gradually enabling automated nightly alerts via messaging platforms.
+
 
 
 
@@ -44,12 +46,14 @@ sell-outs too early (lost revenue)
 excess unsold food (waste loss)
 
 
+
 📊 Current Industry Gap
 
 Large delivery platforms and enterprise systems already provide macro-level insights:
 “CBD lunch demand expected +18% due to office return trend. Chinese rice dishes +22%, Western meals +12%. Rain probability 60% may shift +8% demand to delivery.”
 
 However, these insights are: too broad, not actionable for individual stalls, and not tied to exact preparation quantities
+
 
 
 🤖 Our Solution
