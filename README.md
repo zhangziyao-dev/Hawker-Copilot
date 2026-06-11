@@ -58,7 +58,7 @@ Instead of general trends, Hawker Copilot provides vendor-specific, actionable r
 ## 📱 Telegram Alert Preview
 
 🍜 HAWKER COPILOT — Prep Alert
-━━━━━━━━━━━━━━━━━━━━━━━
+
 🏪 Ah Kow Chicken Rice
 📆 Tomorrow: Friday, 15 Aug 2025
 📊 AI Recommendation
@@ -70,7 +70,7 @@ Prepare 78 portions of Chicken Rice
 ⚠️ Risk Assessment
 🟢 Waste Risk: LOW
 🟢 Shortage Risk: LOW
-━━━━━━━━━━━━━━━━━━━━━━━
+
 Powered by Hawker Copilot AI 🤖
 
 ---
@@ -88,27 +88,7 @@ Frontend: React 18, Vite, Tailwind CSS, Recharts
 Infrastructure & Orchestration:APScheduler (nightly jobs), Telegram Bot API (alerts), SQLite (persistence)
 
 
-🧠 System Overview
-┌──────────────────────────────────────────────────────────┐
-│                    HAWKER COPILOT                        │
-├──────────────────────────────────────────────────────────┤
-│                                                          │
-│  LAYER 1 — Demand Forecast Engine                        │
-│  XGBoost regression model                                │
-│  20 Singapore-specific demand features                   │
-│  Weather · holidays · payday cycles · events             │
-│                        ↓                                 │
-│  LAYER 2 — Context Retrieval (RAG Layer)                 │
-│  FAISS vector database                                   │
-│  Historical demand pattern matching                      │
-│  Similar scenario retrieval                              │
-│                        ↓                                 │
-│  LAYER 3 — AI Copilot Reasoning                          │
-│  GPT-4o-mini                                             │
-│  Vendor-aware prompting                                  │
-│  Converts predictions → actionable prep advice           │
-│                                                          │
-└──────────────────────────────────────────────────────────┘
+
 
 
 ## 🏗️ System Architecture
