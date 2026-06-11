@@ -81,10 +81,15 @@ Key Design Principle
 
 🛠️ Tech Stack
 Backend: FastAPI, Python 3.11, Pydantic (REST APIs)
+
 Machine Learning (Forecasting): XGBoost, scikit-learn, feature engineering (weather, holidays, events, payday cycles)
+
 Retrieval-Augmented Generation (RAG): FAISS, sentence-transformers (all-MiniLM-L6-v2)
+
 LLM / AI Copilot: OpenAI GPT-4o-mini (vendor-aware reasoning, recommendation generation, confidence scoring)
+
 Frontend: React 18, Vite, Tailwind CSS, Recharts
+
 Infrastructure & Orchestration:APScheduler (nightly jobs), Telegram Bot API (alerts), SQLite (persistence)
 
 
